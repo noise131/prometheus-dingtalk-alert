@@ -24,7 +24,6 @@ Linux 升级 python3 文档详见 : [centos安装python3及pip3.md](https://gith
                requests
 ```
 
-
 # 基本用法
 
 Usage : python3  main.py  [-hv]  [-c CONFIG_FILE]
