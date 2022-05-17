@@ -1,0 +1,26 @@
+{% if status == 'firing' %}
+## <font color="#FF0000">Firing</font>
+- <font color="#FF0000">告警时间</font> : {{startsAt}}
+## **Labels**
+{% for label_k, label_v in labels.items() %}
+> {{label_k}} : {{label_v}}
+{% endfor %}
+## **Annotations**
+{% for annota_k, annota_v in annotations.items() %}
+> {{annota_k}} : {{annota_v}}
+{% endfor %}
+{% endif %}
+
+{% if status == 'resolved' %}
+## <font color="#4CC417">Resolved</font>
+- <font color="#FF0000">告警时间</font> : {{startsAt}}
+- <font color="#4CC417">恢复时间</font> : {{endsAt}}
+## **Labels**
+{% for label_k, label_v in labels.items() %}
+> {{label_k}} : {{label_v}}
+{% endfor %}
+## **Annotations**
+{% for annota_k, annota_v in annotations.items() %}
+> {{annota_k}} : {{annota_v}}
+{% endfor %}
+{% endif %}

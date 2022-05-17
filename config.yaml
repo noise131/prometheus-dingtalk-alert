@@ -1,0 +1,25 @@
+---
+#template: ./templates/default_dingtalk-templates.tmpl
+template: ./templates/dingtalk-templates.tmpl
+
+dingtalkRobotConfig:
+  - robot: robot-1
+    webhook: https://oapi.dingtalk.com/robot/send?access_token=xxxxxxxxxx
+    securityType:
+      type: keyword
+      value:
+        - test
+        - abc
+  - robot: robot-2
+    webhook: https://oapi.dingtalk.com/robot/send?access_token=xxxxxxxxxx
+    securityType:
+      type: secret
+      value: SECce56667cfc6xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx500f31fe67f
+    messageType: markdown
+    atMobiles:
+      - '156xxxxx405'
+    atAll: false
+
+webhookListen:
+  host: 0.0.0.0
+  port: 8000
