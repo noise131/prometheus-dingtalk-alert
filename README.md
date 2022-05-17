@@ -14,6 +14,8 @@ prometheus(alertmanager) 钉钉告警模块
 
 以上环境测试功能全部正常
 
+Linux 升级 python3 文档详见 : [centos安装python3及pip3.md](https://github.com/noise131/ResourceRepo/blob/main/doc-resource/centos%E5%AE%89%E8%A3%85python3%E5%8F%8Apip3_.md)
+
 ### python 需要安装的软件包
 
 ```shell
