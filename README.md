@@ -4,13 +4,23 @@ prometheus(alertmanager) 钉钉告警模块
 
 # 基本环境
 
-测试使用环境版本为
+### 测试环境相关软件版本
+
+测试使用相关程序的版本为
 
 - python : **3.6.10**
 - prometheus : **2.35.0**
 - alertmanager : **0.24.0**
 
 以上环境测试功能全部正常
+
+### python 需要安装的软件包
+
+```shell
+]# pip install pyyaml \
+               flask \
+               requests
+```
 
 
 # 基本用法
@@ -258,11 +268,11 @@ prometheus webhook 实际上就是通过 POST 请求提交 JSON 格式数据到�
 
 ### 告警信息效果
 
-![告警信息效果](https://github.com/noise131/ImagesResource/blob/main/prometheus-dingtalk-alert/firing_message.png?raw=true)
+![告警信息效果](https://github.com/noise131/ResourceRepo/blob/main/prometheus-dingtalk-alert/firing_message.png?raw=true)
 
 ### 恢复信息效果
 
-![恢复信息效果](https://github.com/noise131/ImagesResource/blob/main/prometheus-dingtalk-alert/resolved_message.png?raw=true)
+![恢复信息效果](https://github.com/noise131/ResourceRepo/blob/main/prometheus-dingtalk-alert/resolved_message.png?raw=true)
 
 
 
