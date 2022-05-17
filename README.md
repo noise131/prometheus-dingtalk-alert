@@ -132,7 +132,7 @@ prometheus webhook 实际上就是通过 POST 请求提交 JSON 格式数据到�
 
 ### 告警的 json 数据
 
-```json
+```
 {
     'receiver': 'webhook-zdy',
     'status': 'firing',
@@ -191,7 +191,7 @@ prometheus webhook 实际上就是通过 POST 请求提交 JSON 格式数据到�
 
 ### 恢复告警的 json 数据
 
-```json
+```
 {
     'receiver': 'webhook-zdy',
     'status': 'resolved',
