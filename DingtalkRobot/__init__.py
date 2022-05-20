@@ -1,2 +1,0 @@
-from .dingtalkRobot import *
-
