@@ -1,0 +1,27 @@
+{% if status == 'firing' %}
+## <font color="#FF0000">告警简要</font>
+- 告警名 : {{labels.alertname}}
+- 告警值 : {{annotations.value}}
+- 严重性 : {{labels.severity}}
+- 告警主机 : {{labels.server}}
+- <font color="#FF0000">告警时间</font> : {{startsAt}}
+- 告警描述 : {{annotations.description}}
+## **Labels List**
+{% for label_k, label_v in labels.items() %}
+> {{label_k}} : {{label_v}}
+{% endfor %}
+{% endif %}
+
+{% if status == 'resolved' %}
+## <font color="#4CC417">恢复简要</font>
+- 告警名 : {{labels.alertname}}
+- 严重性 : {{labels.severity}}
+- 告警主机 : {{labels.server}}
+- <font color="#FF0000">告警时间</font> : {{startsAt}}
+- <font color="#4CC417">恢复时间</font> : {{endsAt}}
+- 告警描述 : {{annotations.description}}
+## **Labels List**
+{% for label_k, label_v in labels.items() %}
+> {{label_k}} : {{label_v}}
+{% endfor %}
+{% endif %}

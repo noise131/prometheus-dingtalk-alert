@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>send_record</title>
+</head>
+<body>
+    <table border="1">
+        <tbody>
+            <tr>
+                <th>Time</th>
+                <th>Code</th>
+                <th>Info</th>
+            </tr>
+            {% for i in record %}
+                <tr>
+                    <th>{{ i.time }}</th>
+                    <th>{{ i.error_code }}</th>
+                    <th>{{ i.error_info }}</th>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
