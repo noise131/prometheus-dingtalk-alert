@@ -1,0 +1,14 @@
+[Unit]
+Description=prometheus-dingtalk-alert
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/usr/local/prometheus-dingtalk-alert
+ExecStart=/usr/local/prometheus-dingtalk-alert/prometheus-dingtalk-alert -c ./config.yaml
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

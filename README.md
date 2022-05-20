@@ -116,6 +116,29 @@ receivers:
 ......
 ```
 
+# 基于 systemd 管理的 unit 配置文件
+
+项目根目录的 `prome-dingtalk.service` 文件为 unit 配置文件，将复制到 `/usr/lib/systemd/system/` 可以直接使用
+
+```shell
+[Unit]
+Description=prometheus-dingtalk-alert
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+# 程序的工作目录(主程序所在目录)，必须正确配置，否则将无法识别 config.yaml 中的相对路径
+WorkingDirectory=/usr/local/prometheus-dingtalk-alert
+ExecStart=/usr/local/prometheus-dingtalk-alert/prometheus-dingtalk-alert -c ./config.yaml
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+```
+
+
 # 默认模板
 
 ```jinjia2
