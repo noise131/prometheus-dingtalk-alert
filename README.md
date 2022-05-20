@@ -8,7 +8,7 @@ prometheus(alertmanager) 钉钉告警模块
 
 测试使用相关程序的版本为
 
-- python : **3.6.10**
+- python : **3.6.10** (运行源码需要, 运行二进制程序不需要)
 - prometheus : **2.35.0**
 - alertmanager : **0.24.0**
 
@@ -18,22 +18,30 @@ Linux 升级 python3 文档详见 : [centos安装python3及pip3.md](https://gith
 
 ### python 需要安装的软件包
 
+如果使用源码运行项目需要 python 安装以下软件包
+
 ```shell
 ]# pip install pyyaml \
+               flask \
+               requests
+
+# 或
+
+]# pip3 install pyyaml \
                flask \
                requests
 ```
 
 # 基本用法
 
-`Usage : python3  main.py  [-hv]  [-c CONFIG_FILE]`
+```shell
+Usage : prometheus-dingtalk-alert [-hv] [-c CONFIG_FILE]
 
-- -h : 获取使用帮助
-- -v : 获取软件版本号
-- -c CONFIG_FILE | --config CONFIG_FILE : 指定配置文件位置
-
-  - default : ./config.yaml
-
+  -h : 获取使用帮助
+  -v : 获取软件版本号
+  -c CONFIG_FILE | --config CONFIG_FILE : 指定配置文件位置
+                                          default : ./config.yaml
+```
 # 配置文件
 
 默认配置文件 ./config.yaml
@@ -118,7 +126,7 @@ receivers:
 
 # 基于 systemd 管理的 unit 配置文件
 
-项目根目录的 `prome-dingtalk.service` 文件为 unit 配置文件，将复制到 `/usr/lib/systemd/system/` 可以直接使用
+项目根目录的 `prome-dingtalk.service` 文件为 unit 配置文件，将其复制到 `/usr/lib/systemd/system/` 可以直接使用
 
 ```shell
 [Unit]
