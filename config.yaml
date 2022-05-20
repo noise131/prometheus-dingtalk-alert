@@ -1,0 +1,36 @@
+---
+#template: ./templates/default-markdown.tmpl
+template: templates/dingtalk-markdown.tmpl
+#template: templates/default-text.tmpl
+
+dingtalkRobotConfig:
+  - robot: robot-1
+    webhook: https://oapi.dingtalk.com/robot/send?access_token=xxxxxxxxxx
+    securityType:
+      type: keyword
+      value:
+        - test
+        - abc
+  - robot: robot-2
+    webhook: https://oapi.dingtalk.com/robot/send?access_token=xxxxxxxxxx
+    securityType:
+      type: secret
+      value: SECce56667cfxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx500f31fe67f
+    messageType: markdown
+    atMobiles:
+      - '156xxxxxx05'
+    atAll: false
+
+webhookListen:
+  host: 0.0.0.0
+  port: 8000
+
+logConfig:
+  enable: true
+  level:
+    - 'ERROR'
+    - 'WARNING'
+    - 'INFO'
+    - 'DEBUG'
+#    - 'NOSTD'   # 任何等级的日志都不输出
+  logFile: prometheus-dingtalk-alert.log
