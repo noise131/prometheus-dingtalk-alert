@@ -2,15 +2,17 @@
 
 prometheus(alertmanager) 钉钉告警模块
 
+[![](https://img.shields.io/badge/Release-v2.0-blue)](https://github.com/noise131/prometheus-dingtalk-alert/releases/tag/v2.0)
+
 # 基本环境
 
 ### 测试环境相关软件版本
 
 测试使用相关程序的版本为
 
-- [![](https://img.shields.io/badge/Python-3.6.10-green.svg)](##)
-- [![](https://img.shields.io/badge/Prometheus-2.23.0-green.svg)](https://github.com/prometheus/prometheus/releases/tag/v2.23.0)
-- [![](https://img.shields.io/badge/Alertmanager-0.24.0-green.svg)](https://github.com/prometheus/alertmanager/releases/tag/v0.24.0)
+- [![](https://img.shields.io/badge/Python-3.6.10-green)](##)
+- [![](https://img.shields.io/badge/Prometheus-2.23.0-green)](https://github.com/prometheus/prometheus/releases/tag/v2.23.0)
+- [![](https://img.shields.io/badge/Alertmanager-0.24.0-green)](https://github.com/prometheus/alertmanager/releases/tag/v0.24.0)
 
 以上环境测试功能全部正常
 
