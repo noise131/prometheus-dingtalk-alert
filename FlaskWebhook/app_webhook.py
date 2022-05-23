@@ -1,25 +1,22 @@
 # encoding: utf-8
 
 import re
-import jinja2
 import datetime
 from datetime import datetime, timedelta
 from flask import Flask, request, render_template
 # from flask_basicauth import BasicAuth
 from DingtalkRobot import DingtalkRobot
 from GlobalConfig import GlobalConfig
-from LogHandle import LogHandle
 
+# def test():
+#     # print(main.EXEC_NAME)
+#     print('app_webhook', GlobalConfig.test_var)
+#     GlobalConfig.log_handle.error('webhookTestWrite', 0)
 
-def test():
-    # print(main.EXEC_NAME)
-    print('app_webhook', GlobalConfig.test_var)
-    GlobalConfig.log_handle.error('webhookTestWrite', 0)
-
-
-# print(GlobalConfig.template_path)
 
 webhook_app = Flask('app_webhook', template_folder=GlobalConfig.template_folder)
+
+'''BasicAuth 安全设置'''
 
 
 # GlobalConfig.log_handle = LogHandle(LogHandle.STD_CONCURRENTLY,
@@ -35,11 +32,14 @@ webhook_app = Flask('app_webhook', template_folder=GlobalConfig.template_folder)
 #
 # webhook_app_basic_auth = BasicAuth(webhook_app)
 
+
 @webhook_app.route(rule='/')
 # @webhook_app_basic_auth.required
 def root():
     return {"code": 200, "info": "active"}, 200, [('content-type', 'application/json')]
 
+
+# TODO 告警分组发送和分离发送功能独立
 
 @webhook_app.route(rule='/webhook/<robot_name>/send', methods=['post', 'get'])
 def send(robot_name):
@@ -55,6 +55,7 @@ def send(robot_name):
             ('content-type', 'application/json')]
     # robot.send_markdown('1111')
     if not prometheus_json_data.get('alerts'):
+        # TODO 打日志
         return {"code": 360, "info": '无效数据请求 : {}'.format(prometheus_json_data)}, '200', [
             ('content-type', 'application/json')]
     # print(robot.get_config_dict())
@@ -113,7 +114,7 @@ def api_get_alert_record():
 def template_message_split(message: str):
     str_list = message.split('\n')
     for i in range(0, len(str_list)):
-        str_list[i] = re.sub('^\s+$', '', str_list[i])
+        str_list[i] = re.sub(r'^\s+$', '', str_list[i])
     str_list2 = []
     for i in str_list:
         if i:

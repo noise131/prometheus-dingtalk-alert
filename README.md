@@ -8,9 +8,9 @@ prometheus(alertmanager) 钉钉告警模块
 
 测试使用相关程序的版本为
 
-- python : **3.6.10** (运行源码需要, 运行二进制程序不需要)
-- prometheus : **2.35.0**
-- alertmanager : **0.24.0**
+- [![](https://img.shields.io/badge/Python-3.6.10-green.svg)](https://github.com/prometheus/prometheus/releases/tag/v2.23.0)
+- [![](https://img.shields.io/badge/Prometheus-2.23.0-green.svg)](https://github.com/prometheus/prometheus/releases/tag/v2.23.0)
+- [![](https://img.shields.io/badge/Alertmanager-0.24.0-green.svg)](https://github.com/prometheus/alertmanager/releases/tag/v0.24.0)
 
 以上环境测试功能全部正常
 
