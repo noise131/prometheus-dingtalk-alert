@@ -8,7 +8,7 @@ prometheus(alertmanager) 钉钉告警模块
 
 测试使用相关程序的版本为
 
-- [![](https://img.shields.io/badge/Python-3.6.10-green.svg)](#prometheus-dingtalk-alter)
+- [![](https://img.shields.io/badge/Python-3.6.10-green.svg)](##)
 - [![](https://img.shields.io/badge/Prometheus-2.23.0-green.svg)](https://github.com/prometheus/prometheus/releases/tag/v2.23.0)
 - [![](https://img.shields.io/badge/Alertmanager-0.24.0-green.svg)](https://github.com/prometheus/alertmanager/releases/tag/v0.24.0)
 
